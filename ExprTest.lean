@@ -3,9 +3,9 @@ import «DTypeChecker».Basic
 
 open Expr
 
--- ========================================
+
 -- Test Suite: Well-formed Dependent Type Lambda Expressions
--- ========================================
+
 
 -- Test 1: Identity function on natural numbers
 -- id_ℕ : ℕ → ℕ

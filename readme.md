@@ -4,7 +4,7 @@ A toy implementation of a dependent type checker for intensional type theory wit
 
 ## Structure
 
-All the code for the syntax, type checker are in `DTypeChecker/Basic.lean`. The three files (i.e. `EvalTest.lean`, `ExprTest.lean` and `CheckerTest.lean`) contain some test cases.
+All the code for the syntax, type checker are in `DTypeChecker/Basic.lean`. The three files (i.e. `EvalTest.lean`, `ExprTest.lean` and `DTypeChecker.lean`) contain some test cases.
 
 ## Notes on Building a Toy Dependent Type Checker
 
