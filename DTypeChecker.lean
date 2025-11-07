@@ -373,6 +373,7 @@ def tauSelfApp : Expr :=
 /- Test that the self-application type-checks
   In a consistent system, this should either Fail to type-check
 -/
+--
 
 #eval match testSynth tauSelfApp with
   | Except.ok ty => s!"Self-application type-checks with type: {repr ty}"

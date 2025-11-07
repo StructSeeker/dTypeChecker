@@ -196,3 +196,5 @@ def test30 := Equal Natural (Succ Zero) (Succ Zero)
 
 -- Test complex shadowing: outer variable should not be confused with shadowed inner variable
 #guard αEquiv (Expr.Lambda "x" (Expr.App (Expr.Lambda "x" (Expr.Var "x")) (Expr.Var "x"))) (Expr.Lambda "y" (Expr.App (Expr.Lambda "z" (Expr.Var "z")) (Expr.Var "y"))) == true
+
+--
