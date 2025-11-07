@@ -6,9 +6,9 @@ A toy implementation of a dependent type checker for intensional type theory wit
 
 All the code for the syntax, type checker are in `DTypeChecker/Basic.lean`. The three files (i.e. `EvalTest.lean`, `ExprTest.lean` and `DTypeChecker.lean`) contain some test cases.
 
-## Notes on Building a Toy Dependent Type Checker
+## Reflections
 
-The implementation follows the tutorial closely with some caveats:
+The journey is quite messy, but it's better to fail fast than stalling.
 
 Hit some Lean4 infrastructure gaps that surprised me. Expected `MonadExcept ε (ReaderT ρ m)` to exist but had to roll my own instances. I don't know it's by-design or simple omission. In the hindsight, maybe without mtl-style monad class would result in cleaner code. Ended up writing more boilerplate than expected just to thread a typing context through.
 
