@@ -17,3 +17,32 @@ Type theory, like any theory and field, feels a a rabbit hole, knowing new thing
 I suppose formally-verifiy a type checker would not be small work. Proving NbE's termination likely requires logical relations and newman theorem for abstract rewriting. There are also some issues important for practical proof assistant: right now bidirectional checking returns exception or unit, but modern proof assistant produce unification constraints for meta-variables. And also i need to implement elaboration.
 
 Another thing i need to dig into is the gap between closure in implementation and substution in theory, it seems to be called typed closure conversion.
+
+## Irrelevant Note
+Compare Normal/Neutral/Exp with the following: this way we encode IsaVal Info into type and can implement a stronger-typed CPS evaluator
+```
+type valfor = \exp. $val. 
+            ('zero : 1) 
+            + ('vsucc: val)
+            + ('true : 1)
+            + ('false : 1)
+            + ('lam : val -> exp) 
+            + ('unit : 1)
+            + ('vpair : val * val)
+            + ('vinl : val) + ('vinr : val)
+            + ('cont: val -> maybe val)
+
+type exp = $exp. 
+            ('val : valfor exp)
+         + ('succ : exp)
+         + ('if : exp * exp * exp)
+         + ('app : exp * exp)
+         + ('caseu : exp * (1 -> exp)) 
+         + ('pair : exp * exp)
+         + ('casep : exp * ((valfor exp) * (valfor exp) -> exp))
+         + ('inl : exp) + ('inr : exp)
+         + ('cases : exp * ((valfor exp) -> exp) * ((valfor exp) -> exp))
+         + ('fix : exp -> exp) 
+         + ('callcc : (valfor exp -> maybe (valfor exp)) -> exp) 
+         + ('throw: exp * exp)
+```
